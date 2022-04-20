@@ -8,7 +8,7 @@ Lexical Structure
 whitespace = intraline whitespace | line ending | comment ;
 intraline whitespace = ' ' | '\t' ;
 line ending = '\r' | '\n' ;
-comment = ';' ? any character except line ending ? ;
+comment = ';', ? any character except line ending ? ;
 
 token = identifier | literal | '(' | ')' | '.' ;
 
@@ -18,12 +18,14 @@ identifier start = letter | '!' | '$' | '%' | '^' | '&' | '*' | '-' | '_'
 identifier body = identifier start | digit ;
 
 literal = symbol literal
+        | boolean literal
         | character literal
         | string literal
         | integer literal
         | float literal ;
 
 symbol literal = '\'', identifier ;
+boolen literal = 'true' | 'false' | 'nil' ;
 character literal = '#\', ? TODO ? ;
 string literal = '"', ( ? TODO ? ) *, '"' ;
 integer literal = [ sign ], digit, { digit * } ;
