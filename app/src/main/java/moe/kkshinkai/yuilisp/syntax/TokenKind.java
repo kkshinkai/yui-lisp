@@ -6,11 +6,14 @@ package moe.kkshinkai.yuilisp.syntax;
 public enum TokenKind {
     IDENTIFIER,
     SYMBOL_LITERAL,
-    CHARACTER_LITERAL,
     STRING_LITERAL,
     INTEGER_LITERAL,
     FLOAT_LITERAL,
-    BOOLEAN_LITERAL,
-    UNKNOWN,
+    TRUE_LITERAL,
+    FALSE_LITERAL,
+    NIL_LITERAL,
     EOF,
+
+    L_PAREN,
+    R_PAREN,
 }
