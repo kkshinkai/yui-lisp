@@ -1,2 +1,4 @@
-# yui-lisp
+Yui Lisp
+========
+
 An experimental concurrent lisp dialect.
