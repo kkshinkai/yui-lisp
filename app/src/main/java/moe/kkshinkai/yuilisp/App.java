@@ -12,7 +12,7 @@ public class App {
     }
 
     public static void main(String[] args) {
-        var lexer = new Lexer("(define x (+ 1 2)) ('asda \"asdasd\") 2123.123e+2 asd 123");
+        var lexer = new Lexer("(define x (+ 1 2)) ('asda \"asdasd\") 2123.123e+2 asd 123 nil true");
 
         while (lexer.nextToken() != TokenKind.EOF) {
             System.out.println(lexer.getTokenKind() + " " + lexer.getText());

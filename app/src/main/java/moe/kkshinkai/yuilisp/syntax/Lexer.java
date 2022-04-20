@@ -114,7 +114,7 @@ public class Lexer {
             nextChar();
         }
 
-        if (!isDelimiter(peekChar())) {
+        if (peekChar() != -1 && !isDelimiter(peekChar())) {
             skipUnknownToken();
             System.out.println("error: identifier '" + src.substring(start, ptr) + "' is not a valid identifier at line " + line + ", column " + column);
             return nextToken();
