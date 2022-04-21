@@ -3,8 +3,7 @@
 
 package moe.kkshinkai.yuilisp;
 
-import moe.kkshinkai.yuilisp.syntax.Lexer;
-import moe.kkshinkai.yuilisp.syntax.TokenKind;
+import moe.kkshinkai.yuilisp.syntax.Parser;
 
 public class App {
     public String getGreeting() {
@@ -12,10 +11,9 @@ public class App {
     }
 
     public static void main(String[] args) {
-        var lexer = new Lexer("(define x (+ 1 2)) ('asda \"asdasd\") 2123.123e+2 asd 123 nil true");
+        var parser = new Parser("(define x (+ 1 2)) ('asda \"asdasd\") 2123.123e+2 asd 123 nil true");
+        var syntax = parser.getSyntax();
 
-        while (lexer.nextToken() != TokenKind.EOF) {
-            System.out.println(lexer.getTokenKind() + " " + lexer.getText());
-        }
+        System.out.println(syntax);
     }
 }

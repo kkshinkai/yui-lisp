@@ -11,4 +11,8 @@ public class PendingSequenceSyntax implements Syntax {
     public PendingSequenceSyntax(List<Syntax> elements) {
         this.elements = elements;
     }
+
+    public PendingSequenceSyntax(Syntax... elements) {
+        this.elements = List.of(elements);
+    }
 }
