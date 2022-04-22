@@ -3,5 +3,4 @@
 
 package moe.kkshinkai.yuilisp.syntax;
 
-public interface Syntax {
-}
+public interface Syntax {}

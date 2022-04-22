@@ -3,5 +3,4 @@
 
 package moe.kkshinkai.yuilisp.syntax;
 
-public class LiteralSyntax implements Syntax {
-}
+public class LiteralSyntax implements Syntax {}
