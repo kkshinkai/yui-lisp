@@ -1,6 +1,6 @@
 package moe.kkshinkai.yuilisp.syntax;
 
-public class StringLiteralSyntax implements Syntax {
+public class StringLiteralSyntax implements SyntaxNode {
     private final String value;
 
     public StringLiteralSyntax(String value) {

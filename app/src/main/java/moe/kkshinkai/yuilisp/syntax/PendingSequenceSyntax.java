@@ -5,14 +5,14 @@ package moe.kkshinkai.yuilisp.syntax;
 
 import java.util.List;
 
-public class PendingSequenceSyntax implements Syntax {
-    private List<Syntax> elements;
+public class PendingSequenceSyntax implements SyntaxNode {
+    private List<SyntaxNode> elements;
 
-    public PendingSequenceSyntax(List<Syntax> elements) {
+    public PendingSequenceSyntax(List<SyntaxNode> elements) {
         this.elements = elements;
     }
 
-    public PendingSequenceSyntax(Syntax... elements) {
+    public PendingSequenceSyntax(SyntaxNode... elements) {
         this.elements = List.of(elements);
     }
 }

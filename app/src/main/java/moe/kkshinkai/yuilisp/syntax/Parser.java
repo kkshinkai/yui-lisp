@@ -10,8 +10,8 @@ public class Parser {
         this.lexer = new Lexer(source);
     }
 
-    public Syntax getSyntax() {
-        List<Syntax> list = new ArrayList<>();
+    public SyntaxNode getSyntax() {
+        List<SyntaxNode> list = new ArrayList<>();
         list.add(new IdentifierSyntax("define"));
         list.add(new PendingSequenceSyntax(new IdentifierSyntax("main")));
 
@@ -26,8 +26,8 @@ public class Parser {
         return new PendingSequenceSyntax(list);
     }
 
-    private Syntax parseSequence() {
-        List<Syntax> list = new ArrayList<>();
+    private SyntaxNode parseSequence() {
+        List<SyntaxNode> list = new ArrayList<>();
         while (lexer.nextToken() != TokenKind.EOF && lexer.getTokenKind() != TokenKind.R_PAREN) {
             if (lexer.getTokenKind() == TokenKind.L_PAREN) {
                 list.add(parseSequence());
@@ -38,7 +38,7 @@ public class Parser {
         return new PendingSequenceSyntax(list);
     }
 
-    private Syntax parseExpression() {
+    private SyntaxNode parseExpression() {
         return switch (lexer.getTokenKind()) {
             case IDENTIFIER -> new IdentifierSyntax(lexer.getText());
             case SYMBOL_LITERAL -> new SymbolLiteralSyntax(lexer.getText().substring(1));
